@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pruebaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/vistaPrueba', function () {
+    return view('pruebaVista');
+});
+
+Route::get('/pruebacontrolador', [pruebaController::class, 'index'])->name('hola');
